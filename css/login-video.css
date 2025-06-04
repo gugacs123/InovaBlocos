@@ -1,0 +1,222 @@
+/* Estilos para a área de login do franqueado */
+
+.login-section {
+  padding: calc(80px + var(--spacing-xl)) 0 var(--spacing-xl);
+  background-color: var(--light-gray);
+  min-height: calc(100vh - 300px); /* Altura mínima para centralizar visualmente */
+  display: flex;
+  align-items: center;
+}
+
+.login-container {
+  max-width: 500px;
+  margin: 0 auto;
+  background-color: var(--background-color);
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  padding: var(--spacing-lg);
+}
+
+.login-header {
+  text-align: center;
+  margin-bottom: var(--spacing-md);
+}
+
+.login-logo {
+  height: 80px;
+  margin-bottom: var(--spacing-sm);
+}
+
+.login-header h2 {
+  margin-bottom: var(--spacing-xs);
+}
+
+.login-header p {
+  color: var(--dark-gray);
+  margin-bottom: var(--spacing-md);
+}
+
+.login-form {
+  margin-bottom: var(--spacing-md);
+}
+
+.input-with-icon {
+  position: relative;
+}
+
+.input-with-icon i {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--dark-gray);
+}
+
+.input-with-icon input {
+  padding-left: 40px;
+}
+
+.remember-forgot {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--spacing-md);
+}
+
+.remember-me {
+  display: flex;
+  align-items: center;
+}
+
+.remember-me input {
+  margin-right: 8px;
+}
+
+.forgot-password {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.forgot-password:hover {
+  text-decoration: underline;
+}
+
+.btn-login {
+  width: 100%;
+  background-color: var(--primary-color);
+  color: white;
+  padding: var(--spacing-sm) var(--spacing-md);
+  border: none;
+  border-radius: 4px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-login:hover {
+  background-color: #6AA98D; /* Versão mais escura da cor primária */
+}
+
+.login-footer {
+  text-align: center;
+  border-top: 1px solid var(--medium-gray);
+  padding-top: var(--spacing-md);
+  font-size: 0.9rem;
+  color: var(--dark-gray);
+}
+
+.login-footer p {
+  margin-bottom: var(--spacing-xs);
+}
+
+.login-footer i {
+  color: var(--primary-color);
+  margin-right: 5px;
+}
+
+/* Estilos para o vídeo de abertura */
+.video-banner {
+  position: relative;
+  width: 100%;
+  height: 600px;
+  overflow: hidden;
+}
+
+.video-banner video {
+  width: 90%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transform: scale(1.25); /* Dá um zoom suave */
+  filter: contrast(1.05) saturate(1.1); /* Melhora um pouco a percepção visual */
+}
+
+.video-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0 var(--spacing-lg);
+}
+
+.video-overlay h1 {
+  color: white;
+  font-size: 3rem;
+  margin-bottom: var(--spacing-md);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.video-overlay p {
+  color: white;
+  font-size: 1.3rem;
+  max-width: 800px;
+  margin: 0 auto var(--spacing-lg);
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.video-controls {
+  position: absolute;
+  bottom: 40px;
+  right: 20px;
+  z-index: 10;
+}
+
+.video-control-btn {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.video-control-btn:hover {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .video-banner {
+    height: 400px;
+  }
+  
+  .video-overlay h1 {
+    font-size: 2rem;
+  }
+  
+  .video-overlay p {
+    font-size: 1.1rem;
+  }
+  
+  .login-container {
+    margin: 0 var(--spacing-sm);
+  }
+}
+
+@media (max-width: 576px) {
+  .video-banner {
+    height: 300px;
+  }
+  
+  .remember-forgot {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .forgot-password {
+    margin-top: var(--spacing-xs);
+  }
+}

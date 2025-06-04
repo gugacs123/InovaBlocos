@@ -1,0 +1,219 @@
+/* Estilos adicionais para as novas seções do site da Franquia Inova Blocos */
+
+/* Seção Onde Encontrar */
+.map-container {
+  height: 400px;
+  margin-bottom: var(--spacing-lg);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.franchisees-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: var(--spacing-md);
+  margin-bottom: var(--spacing-lg);
+}
+
+.franchisee-card {
+  background-color: var(--background-color);
+  border-radius: 8px;
+  padding: var(--spacing-md);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.franchisee-card:hover {
+  transform: translateY(-5px);
+}
+
+.franchisee-card h3 {
+  color: var(--primary-color);
+  margin-bottom: var(--spacing-xs);
+}
+
+.franchisee-info {
+  margin-bottom: var(--spacing-sm);
+}
+
+.franchisee-contact {
+  display: flex;
+  align-items: center;
+  margin-bottom: var(--spacing-xs);
+}
+
+.franchisee-contact i {
+  color: var(--primary-color);
+  margin-right: var(--spacing-xs);
+  width: 20px;
+  text-align: center;
+}
+
+/* Seção Seja um Franqueado */
+.franchise-opportunity {
+  background-color: var(--primary-color);
+  color: white;
+  padding: var(--spacing-md);
+  border-radius: 8px;
+  margin: var(--spacing-lg) 0;
+  text-align: center;
+}
+
+.franchise-opportunity h3 {
+  color: white;
+  margin-bottom: var(--spacing-sm);
+  font-size: 1.8rem;
+}
+
+.franchise-opportunity p {
+  margin-bottom: var(--spacing-md);
+  font-size: 1.1rem;
+}
+
+.btn-white {
+  background-color: white;
+  color: var(--primary-color);
+  padding: var(--spacing-sm) var(--spacing-md);
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: 600;
+  display: inline-block;
+  transition: background-color 0.3s ease;
+}
+
+.btn-white:hover {
+  background-color: #f0f0f0;
+}
+
+.franchise-benefits {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: var(--spacing-md);
+  margin: var(--spacing-lg) 0;
+}
+
+.benefit-item {
+  text-align: center;
+  padding: var(--spacing-md);
+}
+
+.benefit-icon {
+  font-size: 2.5rem;
+  color: var(--primary-color);
+  margin-bottom: var(--spacing-sm);
+}
+
+.franchise-steps {
+  margin: var(--spacing-lg) 0;
+}
+
+.step-container {
+  display: flex;
+  margin-bottom: var(--spacing-md);
+  align-items: flex-start;
+}
+
+.step-number {
+  background-color: var(--primary-color);
+  color: white;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  margin-right: var(--spacing-md);
+  flex-shrink: 0;
+}
+
+.step-content {
+  flex-grow: 1;
+}
+
+.step-content h4 {
+  margin-bottom: var(--spacing-xs);
+}
+
+.franchise-cta {
+  background-color: var(--light-gray);
+  padding: var(--spacing-lg);
+  border-radius: 8px;
+  text-align: center;
+  margin: var(--spacing-lg) 0;
+}
+
+.franchise-cta h3 {
+  margin-bottom: var(--spacing-md);
+}
+
+/* Banner para captação de franqueados */
+.franchise-banner {
+  background-color: var(--primary-color);
+  color: white;
+  padding: var(--spacing-md);
+  border-radius: 8px;
+  margin: var(--spacing-md) 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.franchise-banner-content {
+  flex-grow: 1;
+}
+
+.franchise-banner h3 {
+  color: white;
+  margin-bottom: var(--spacing-xs);
+}
+
+.franchise-banner p {
+  margin-bottom: 0;
+}
+
+.franchise-banner .btn-white {
+  margin-left: var(--spacing-md);
+}
+
+/* Botão destacado no header */
+.btn-franchise {
+  background-color: var(--secondary-color);
+  color: white;
+  padding: var(--spacing-xs) var(--spacing-sm);
+  border-radius: 4px;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  transition: background-color 0.3s ease;
+  margin-left: var(--spacing-sm);
+}
+
+.btn-franchise:hover {
+  background-color: #333333;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .franchise-banner {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .franchise-banner .btn-white {
+    margin-left: 0;
+    margin-top: var(--spacing-sm);
+  }
+  
+  .step-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .step-number {
+    margin-right: 0;
+    margin-bottom: var(--spacing-sm);
+  }
+}
