@@ -11,7 +11,9 @@ document.addEventListener('DOMContentLoaded', function() {
             cep: '13076-112',
             telefone: '(19) 99932-2002',
             email: 'franquiainovablocos@gmail.com',
-            responsavel: 'Matriz'
+            responsavel: 'Matriz',
+            whatsapp: '5519999322002',
+            historia: 'A Inova Blocos Paredes Prontas Campinas é a matriz da franquia, oferecendo soluções inovadoras para construção civil com paredes prontas e sustentáveis. Nossa missão é transformar o mercado de construção com eficiência e qualidade.'
         },
         'sorocaba': {
             nome: 'Franquia Inova Blocos Paredes Prontas Sorocaba',
@@ -21,7 +23,9 @@ document.addEventListener('DOMContentLoaded', function() {
             cep: '00000-000',
             telefone: '(00) 00000-0000',
             email: 'sorocaba@inovablocos.com.br',
-            responsavel: 'Franqueado Sorocaba'
+            responsavel: 'Franqueado Sorocaba',
+            whatsapp: '5519999322002',
+            historia: 'A Inova Blocos Paredes Prontas Sorocaba é uma franquia dedicada a oferecer soluções de construção civil com paredes prontas, focando na sustentabilidade e inovação. Nossa equipe está pronta para atender suas necessidades de construção.'
         },
         'abc': {
             nome: 'Franquia Inova Blocos Paredes Prontas ABC',
@@ -31,7 +35,9 @@ document.addEventListener('DOMContentLoaded', function() {
             cep: '00000-000',
             telefone: '(00) 00000-0000',
             email: 'abc@inovablocos.com.br',
-            responsavel: 'Franqueado ABC'
+            responsavel: 'Franqueado ABC',
+            whatsapp: '5519999322002',
+            historia: 'A Inova Blocos Paredes Prontas ABC é uma franquia que traz inovação e sustentabilidade para a construção civil na região do ABC Paulista. Oferecemos paredes prontas de alta qualidade, com foco em eficiência e respeito ao meio ambiente.'
         },
         'pindamonhangaba': {
             nome: 'Franquia Inova Blocos Paredes Prontas Pindamonhangaba',
@@ -41,7 +47,9 @@ document.addEventListener('DOMContentLoaded', function() {
             cep: '00000-000',
             telefone: '(00) 00000-0000',
             email: 'pindamonhangaba@inovablocos.com.br',
-            responsavel: 'Franqueado Pindamonhangaba'
+            responsavel: 'Franqueado Pindamonhangaba',
+            whatsapp: '5519999322002',
+            historia: 'A Inova Blocos Paredes Prontas Pindamonhangaba é uma franquia que se destaca pela inovação na construção civil, oferecendo paredes prontas sustentáveis e eficientes. Nossa missão é transformar o mercado local com soluções de alta qualidade.'
         },
         'curitiba': {
             nome: 'Franquia Inova Blocos Paredes Prontas Curitiba',
@@ -51,7 +59,9 @@ document.addEventListener('DOMContentLoaded', function() {
             cep: '00000-000',
             telefone: '(00) 00000-0000',
             email: 'curitiba@inovablocos.com.br',
-            responsavel: 'Franqueado Curitiba'
+            responsavel: 'Franqueado Curitiba',
+            whatsapp: '5519999322002',
+            historia: 'A Inova Blocos Paredes Prontas Curitiba é uma franquia que traz inovação e sustentabilidade para a construção civil paranaense. Oferecemos soluções de paredes prontas, focando na eficiência e qualidade dos nossos produtos.'
         },
         'brasilia': {
             nome: 'Franquia Inova Blocos Paredes Prontas Brasília',
@@ -61,7 +71,9 @@ document.addEventListener('DOMContentLoaded', function() {
             cep: '00000-000',
             telefone: '(00) 00000-0000',
             email: 'brasilia@inovablocos.com.br',
-            responsavel: 'Franqueado Brasília'
+            responsavel: 'Franqueado Brasília',
+            whatsapp: '5519999322002',
+            historia: 'A Inova Blocos Paredes Prontas Brasília é uma franquia que se dedica a oferecer soluções inovadoras para a construção civil na capital federal. Nossas paredes prontas são sustentáveis e eficientes, atendendo às necessidades do mercado local.'
         },
         'belo-horizonte': {
             nome: 'Franquia Inova Blocos Paredes Prontas Belo Horizonte',
@@ -71,7 +83,9 @@ document.addEventListener('DOMContentLoaded', function() {
             cep: '00000-000',
             telefone: '(00) 00000-0000',
             email: 'belohorizonte@inovablocos.com.br',
-            responsavel: 'Franqueado Belo Horizonte'
+            responsavel: 'Franqueado Belo Horizonte',
+            whatsapp: '5519999322002',
+            historia: 'A Inova Blocos Paredes Prontas Belo Horizonte é uma franquia que traz inovação e sustentabilidade para a construção civil mineira. Oferecemos paredes prontas de alta qualidade, com foco em eficiência e respeito ao meio ambiente.'
         },
         'fortaleza': {
             nome: 'Franquia Inova Blocos Paredes Prontas Fortaleza',
@@ -81,7 +95,9 @@ document.addEventListener('DOMContentLoaded', function() {
             cep: '00000-000',
             telefone: '(00) 00000-0000',
             email: 'fortaleza@inovablocos.com.br',
-            responsavel: 'Franqueado Fortaleza'
+            responsavel: 'Franqueado Fortaleza',
+            whatsapp: '5519999322002',
+            historia: 'A Inova Blocos Paredes Prontas Fortaleza é uma franquia que se destaca pela inovação na construção civil cearense, oferecendo paredes prontas sustentáveis e eficientes. Nossa missão é transformar o mercado local com soluções de alta qualidade.'
         }
     };
 
@@ -115,8 +131,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    // Função para adicionar card de franqueado ao container
-    function adicionarCardFranqueado(container, franqueado) {
+    function adicionarCardFranqueado(container, franqueado, key) {
         const card = document.createElement('div');
         card.className = 'franchisee-card';
         
@@ -137,6 +152,20 @@ document.addEventListener('DOMContentLoaded', function() {
                 <i class="fas fa-envelope"></i>
                 <span>${franqueado.email}</span>
             </div>
+            ${franqueado.whatsapp ? `
+                <div class="franchisee-contact">
+                    <a href="https://wa.me/${franqueado.whatsapp}" target="_blank" class="whatsapp-button">
+                        <i class="fab fa-whatsapp"></i> Conversar no WhatsApp
+                    </a>
+                </div>
+            ` : ''}
+            ${franqueado.historia ? `
+                <div class="franchisee-contact">
+                    <a href="franquias/${franqueado.cidade.toLowerCase().replace(/\s+/g, '-').normalize('NFD').replace(/[\u0300-\u036f]/g, '')}.html" class="history-button">
+                        <i class="fas fa-book"></i> História do Franqueado
+                    </a>
+                </div>
+            ` : ''}    
         `;
         
         container.appendChild(card);
