@@ -385,10 +385,15 @@ footer {
   }
   
   nav ul {
-    position: fixed;
-    top: 80px;
-    height: calc(100vh - 80px);
-    overflow-y: auto;
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: var(--background-color);
+    flex-direction: column;
+    padding: var(--spacing-sm) 0;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
   }
   
   nav ul.active {

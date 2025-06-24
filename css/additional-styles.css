@@ -179,7 +179,7 @@
 
 /* Botão destacado no header */
 .btn-franchise {
-  background-color: var(--secondary-color);
+  background-color: var(--primary-color);
   color: white;
   padding: var(--spacing-xs) var(--spacing-sm);
   border-radius: 4px;
@@ -188,10 +188,11 @@
   font-size: 0.8rem;
   transition: background-color 0.3s ease;
   margin-left: var(--spacing-sm);
+  text-decoration: none;
 }
 
 .btn-franchise:hover {
-  background-color: #333333;
+  background-color:rgb(90, 145, 121);
 }
 
 /* Responsividade */
