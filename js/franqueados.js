@@ -46,7 +46,7 @@ document.addEventListener('DOMContentLoaded', function() {
             estado: 'SP',
             cep: '00000-000',
             telefone: '(00) 00000-0000',
-            email: 'pindamonhangaba@inovablocos.com.br',
+            email: 'pindan@inovablocos.com.br',
             responsavel: 'Franqueado Pindamonhangaba',
             whatsapp: '5519999322002',
             historia: 'A Inova Blocos Paredes Prontas Pindamonhangaba é uma franquia que se destaca pela inovação na construção civil, oferecendo paredes prontas sustentáveis e eficientes. Nossa missão é transformar o mercado local com soluções de alta qualidade.'

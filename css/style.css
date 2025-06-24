@@ -104,8 +104,12 @@ header {
 /* Navegação */
 nav ul {
   display: flex;
+  flex-wrap: wrap; /* Permite que os itens quebrem para outra linha */
   list-style: none;
+  justify-content: center; /* Centraliza os itens no menu */
+  gap: var(--spacing-sm); /* Espaço entre os itens (opcional, fica mais bonito) */
 }
+
 
 nav ul li {
   margin-left: var(--spacing-md);
@@ -118,6 +122,7 @@ nav ul li a {
   text-transform: uppercase;
   font-size: 0.9rem;
   transition: color 0.2s ease;
+  white-space: nowrap;
 }
 
 nav ul li a:hover {
@@ -380,15 +385,10 @@ footer {
   }
   
   nav ul {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    background-color: var(--background-color);
-    flex-direction: column;
-    padding: var(--spacing-sm) 0;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 80px;
+    height: calc(100vh - 80px);
+    overflow-y: auto;
   }
   
   nav ul.active {
@@ -398,11 +398,13 @@ footer {
   nav ul li {
     margin: 0;
     text-align: center;
+    width: 100%;
   }
   
   nav ul li a {
     display: block;
     padding: var(--spacing-sm);
+    width: 100%;
   }
   
   .hero {

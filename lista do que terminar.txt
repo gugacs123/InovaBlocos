@@ -19,6 +19,7 @@
 -✅tirar o mapa do NOSSAS FRANQUIAS
 
 -✅colocar no menu "Orçamento em 24 horas" /abrir uma nova página/ *colocar por último* #
+
 -colocar uma área de upload para a pessoa subir o projeto
 
 -✅colocar o botão do ZAP em baixo de cada franqueado
