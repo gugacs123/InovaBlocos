@@ -14,6 +14,15 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+    </script>
+    <script type="text/javascript">
+    (function(){
+        emailjs.init("7xvKtfgNultZvCa_E");
+    })();
+    </script>
+    <script src="script.js"></script>
 </head>
 <body>
     <!-- Header -->
@@ -274,7 +283,7 @@
                             <label for="message">Mensagem</label>
                             <textarea id="message" name="message" required></textarea>
                         </div>
-                        <button type="submit" class="btn">Enviar Mensagem</button>
+                        <button type="submit" onclick="sendMail()" class="btn">Enviar Mensagem</button>
                     </form>
                 </div>
             </div>
