@@ -390,10 +390,14 @@ footer {
     top: 100%;
     left: 0;
     width: 100%;
+    max-height: 80vh;
+    overflow-y: auto;
+    overflow-x: hidden; /* Impede rolagem horizontal */
     background-color: var(--background-color);
     flex-direction: column;
     padding: var(--spacing-sm) 0;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
   }
   
   nav ul.active {
@@ -407,9 +411,8 @@ footer {
   }
   
   nav ul li a {
-    display: block;
-    padding: var(--spacing-sm);
-    width: 100%;
+    white-space: normal; /* Permite quebra de linha */
+    word-break: break-word; /* Garante que textos grandes quebrem corretamente */
   }
   
   .hero {
