@@ -190,9 +190,19 @@
 /* Responsividade */
 @media (max-width: 768px) {
   .video-banner {
-    height: 400px;
+    min-height: auto;
+  }
+
+  .video-banner video {
+    width: 100%;
+    height: auto;
+    transform: none; /* Remove o zoom em telas menores */
   }
   
+  .video-overlay {
+    padding: var(--spacing-md);
+  }
+
   .video-overlay h1 {
     font-size: 2rem;
   }
@@ -207,8 +217,17 @@
 }
 
 @media (max-width: 576px) {
-  .video-banner {
-    height: 300px;
+  .video-overlay h1 {
+    font-size: 1.6rem;
+  }
+
+  .video-overlay p {
+    font-size: 1rem;
+  }
+
+  .video-overlay .btn {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
   }
   
   .remember-forgot {

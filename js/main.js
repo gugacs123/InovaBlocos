@@ -22,17 +22,17 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     
     // Formulário de contato
-    const contactForm = document.getElementById('contact-form');
-    if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            
+    //const contactForm = document.getElementById('contact-form');
+    //if (contactForm) {
+    //    contactForm.addEventListener('submit', function(e) {
+    //        e.preventDefault();
+    //        
             // Aqui seria implementada a lógica de envio do formulário
             // Por enquanto, apenas simulamos uma resposta
-            alert('Obrigado pelo contato! Em breve retornaremos sua mensagem.');
-            contactForm.reset();
-        });
-    }
+    //        alert('Obrigado pelo contato! Em breve retornaremos sua mensagem.');
+    //        contactForm.reset();
+    //    });
+    //}
     
     // Efeito de scroll suave para links de âncora
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
