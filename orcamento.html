@@ -12,6 +12,81 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        .upload-area {
+            border: 2px dashed #ccc;
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+            margin: 10px 0;
+            background-color: #f9f9f9;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .upload-area:hover {
+            border-color: #007bff;
+            background-color: #f0f8ff;
+        }
+        
+        .upload-area.dragover {
+            border-color: #007bff;
+            background-color: #e3f2fd;
+        }
+        
+        .upload-area input[type="file"] {
+            display: none;
+        }
+        
+        .upload-icon {
+            font-size: 2em;
+            color: #666;
+            margin-bottom: 10px;
+        }
+        
+        .file-list {
+            margin-top: 15px;
+        }
+        
+        .file-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #fff;
+            padding: 8px 12px;
+            margin: 5px 0;
+            border-radius: 4px;
+            border: 1px solid #ddd;
+        }
+        
+        .file-item .remove-file {
+            color: #dc3545;
+            cursor: pointer;
+            font-size: 1.2em;
+        }
+        
+        .form-section {
+            background: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin: 20px 0;
+        }
+        
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+        
+        @media (max-width: 768px) {
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
 
@@ -48,7 +123,98 @@
     <section class="hero" id="inicio">
         <div class="container">
             <h1>ORÇAMENTO EM 24 HORAS</h1>
-            <p>Entre em contato pelo WhatsApp ou E-mail e receba seu orçamento personalizado de forma rápida!</p>
+            <p>Solicite seu orçamento personalizado de paredes termoacústicas prontas!</p>
+        </div>
+    </section>
+
+    <!-- Formulário de Orçamento Completo -->
+    <section id="orcamento-formulario">
+        <div class="container">
+            <div class="section-title">
+                <h2>Solicite Seu Orçamento</h2>
+                <p>Preencha o formulário abaixo e anexe documentos ou imagens do seu projeto</p>
+            </div>
+            
+            <div class="form-section">
+                <form action="https://formsubmit.co/inovablocosdev@gmail.com" method="POST" enctype="multipart/form-data" id="orcamento-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="nome">Nome Completo *</label>
+                            <input type="text" id="nome" name="nome" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">E-mail *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="telefone">Telefone *</label>
+                            <input type="tel" id="telefone" name="telefone" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="cidade">Cidade/Estado *</label>
+                            <input type="text" id="cidade" name="cidade" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="tipo-projeto">Tipo de Projeto *</label>
+                            <select id="tipo-projeto" name="tipo-projeto" required>
+                                <option value="">Selecione uma opção</option>
+                                <option value="residencial">Residencial</option>
+                                <option value="comercial">Comercial</option>
+                                <option value="industrial">Industrial</option>
+                                <option value="outro">Outro</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="area-projeto">Área Aproximada (m²)</label>
+                            <input type="number" id="area-projeto" name="area-projeto" min="1">
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="descricao">Descrição do Projeto *</label>
+                        <textarea id="descricao" name="descricao" rows="4" required placeholder="Descreva detalhes do seu projeto, especificações técnicas, prazo desejado, etc."></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="arquivos">Anexar Arquivos</label>
+                        <input type="file" id="arquivos" name="arquivos" multiple accept=".pdf,.doc,.docx,.jpg,.jpeg,.png,.gif" style="display: none;">
+                        <div class="upload-area" id="upload-area">
+                            <div class="upload-icon">
+                                <i class="fas fa-cloud-upload-alt"></i>
+                            </div>
+                            <p><strong>Clique aqui</strong> ou arraste arquivos para anexar</p>
+                            <p style="font-size: 0.9em; color: #666;">Formatos aceitos: PDF, DOC, DOCX, JPG, PNG, GIF (máx. 25MB cada)</p>
+                        </div>
+                        <div class="file-list" id="file-list"></div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="prazo">Prazo Desejado</label>
+                        <select id="prazo" name="prazo">
+                            <option value="">Selecione uma opção</option>
+                            <option value="urgente">Urgente (até 1 semana)</option>
+                            <option value="rapido">Rápido (1-2 semanas)</option>
+                            <option value="normal">Normal (2-4 semanas)</option>
+                            <option value="flexivel">Flexível (mais de 1 mês)</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="observacoes">Observações Adicionais</label>
+                        <textarea id="observacoes" name="observacoes" rows="3" placeholder="Informações complementares, preferências, etc."></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn" style="width: 100%; font-size: 1.1em; padding: 15px;">
+                        <i class="fas fa-paper-plane"></i> Enviar Solicitação de Orçamento
+                    </button>
+                </form>
+            </div>
         </div>
     </section>
 
@@ -56,11 +222,11 @@
     <section id="orcamento-contato">
         <div class="container" style="text-align: center;">
             <div class="section-title">
-                <h2>Fale Conosco Agora</h2>
+                <h2>Precisa de Ajuda?</h2>
             </div>
-            <p><strong>WhatsApp / Telefone:</strong></p>
+            <p><strong>Fale Conosco Diretamente:</strong></p>
             <a href="https://wa.me/5519999322002?text=Olá! Gostaria de solicitar um orçamento de paredes termoacústicas." target="_blank" class="btn btn-whatsapp">
-                (19) 99932-2002 - Clique para chamar no WhatsApp
+                <i class="fab fa-whatsapp"></i> (19) 99932-2002 - WhatsApp
             </a>
             <br><br>
             <p><strong>E-mail:</strong></p>
@@ -131,5 +297,84 @@
     </a>
 
     <script src="js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const uploadArea = document.getElementById('upload-area');
+            const fileInput = document.getElementById('arquivos');
+            const fileList = document.getElementById('file-list');
+            const orcamentoForm = document.getElementById('orcamento-form');
+            
+            // Upload area click
+            uploadArea.addEventListener('click', function() {
+                fileInput.click();
+            });
+            
+            // Drag and drop functionality
+            uploadArea.addEventListener('dragover', function(e) {
+                e.preventDefault();
+                uploadArea.classList.add('dragover');
+            });
+            
+            uploadArea.addEventListener('dragleave', function(e) {
+                e.preventDefault();
+                uploadArea.classList.remove('dragover');
+            });
+            
+            uploadArea.addEventListener('drop', function(e) {
+                e.preventDefault();
+                uploadArea.classList.remove('dragover');
+                const files = e.dataTransfer.files;
+                handleFiles(files);
+            });
+            
+            // File input change
+            fileInput.addEventListener('change', function(e) {
+                handleFiles(e.target.files);
+            });
+            
+            function handleFiles(files) {
+                Array.from(files).forEach(file => {
+                    // Verificar tamanho do arquivo (10MB)
+                    if (file.size > 10 * 1024 * 1024) {
+                        alert(`Arquivo ${file.name} é muito grande. Tamanho máximo: 10MB`);
+                        return;
+                    }
+                    
+                    // Verificar tipo de arquivo
+                    const allowedTypes = ['image/jpeg', 'image/jpg', 'image/png', 'image/gif', 'application/pdf', 'application/msword', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document'];
+                    if (!allowedTypes.includes(file.type)) {
+                        alert(`Tipo de arquivo não suportado: ${file.name}`);
+                        return;
+                    }
+                    
+                    displayFile(file);
+                });
+            }
+            
+            function displayFile(file) {
+                const fileItem = document.createElement('div');
+                fileItem.className = 'file-item';
+                fileItem.innerHTML = `
+                    <span>${file.name} (${formatFileSize(file.size)})</span>
+                    <i class="fas fa-check" style="color: #28a745;"></i>
+                `;
+                fileList.appendChild(fileItem);
+            }
+            
+            function formatFileSize(bytes) {
+                if (bytes === 0) return '0 Bytes';
+                const k = 1024;
+                const sizes = ['Bytes', 'KB', 'MB', 'GB'];
+                const i = Math.floor(Math.log(bytes) / Math.log(k));
+                return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
+            }
+            
+            // Form submission
+            orcamentoForm.addEventListener('submit', function(e) {
+                // O Formspree vai cuidar do envio automaticamente
+                // Não precisamos prevenir o comportamento padrão
+            });
+        });
+    </script>
 </body>
 </html>

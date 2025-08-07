@@ -1,140 +1,132 @@
-/* JavaScript para a funcionalidade de localização de franqueados */
-
 document.addEventListener('DOMContentLoaded', function() {
     // Dados dos franqueados por região
     const franqueados = {
         'campinas': {
             nome: 'Franquia Inova Blocos Paredes Prontas Campinas',
-            endereco: 'Rua Dr Mario Natividade, 936 1-141, Taquaral',
+            endereco: 'Endereço do Franqueado',
             cidade: 'Campinas',
             estado: 'SP',
-            cep: '13076-112',
-            telefone: '(19) 99932-2002',
-            email: 'franquiainovablocos@gmail.com',
-            responsavel: 'Matriz',
-            whatsapp: '5519999322002',
-            historia: 'A Inova Blocos Paredes Prontas Campinas é a matriz da franquia, oferecendo soluções inovadoras para construção civil com paredes prontas e sustentáveis. Nossa missão é transformar o mercado de construção com eficiência e qualidade.'
+            telefone: '(19) 99120-2340',
+            responsavel: 'João Ceschi Jr',
+            whatsapp: '5519991202340',
+            historia: 'A Inova Blocos Paredes Prontas Campinas é a matriz da franquia, oferecendo soluções inovadoras para construção civil com paredes prontas e sustentáveis.'
         },
         'sorocaba': {
             nome: 'Franquia Inova Blocos Paredes Prontas Sorocaba',
             endereco: 'Endereço do Franqueado',
             cidade: 'Sorocaba',
             estado: 'SP',
-            cep: '00000-000',
-            telefone: '(00) 00000-0000',
-            email: 'sorocaba@inovablocos.com.br',
-            responsavel: 'Franqueado Sorocaba',
-            whatsapp: '5519999322002',
-            historia: 'A Inova Blocos Paredes Prontas Sorocaba é uma franquia dedicada a oferecer soluções de construção civil com paredes prontas, focando na sustentabilidade e inovação. Nossa equipe está pronta para atender suas necessidades de construção.'
-        },
-        'abc': {
-            nome: 'Franquia Inova Blocos Paredes Prontas ABC',
-            endereco: 'Endereço do Franqueado',
-            cidade: 'Santo André',
-            estado: 'SP',
-            cep: '00000-000',
-            telefone: '(00) 00000-0000',
-            email: 'abc@inovablocos.com.br',
-            responsavel: 'Franqueado ABC',
-            whatsapp: '5519999322002',
-            historia: 'A Inova Blocos Paredes Prontas ABC é uma franquia que traz inovação e sustentabilidade para a construção civil na região do ABC Paulista. Oferecemos paredes prontas de alta qualidade, com foco em eficiência e respeito ao meio ambiente.'
-        },
-        'pindamonhangaba': {
-            nome: 'Franquia Inova Blocos Paredes Prontas Pindamonhangaba',
-            endereco: 'Endereço do Franqueado',
-            cidade: 'Pindamonhangaba',
-            estado: 'SP',
-            cep: '00000-000',
-            telefone: '(00) 00000-0000',
-            email: 'pindan@inovablocos.com.br',
-            responsavel: 'Franqueado Pindamonhangaba',
-            whatsapp: '5519999322002',
-            historia: 'A Inova Blocos Paredes Prontas Pindamonhangaba é uma franquia que se destaca pela inovação na construção civil, oferecendo paredes prontas sustentáveis e eficientes. Nossa missão é transformar o mercado local com soluções de alta qualidade.'
+            telefone: '(15) 99637-3177',
+            responsavel: 'Douglas Teixeira',
+            whatsapp: '5515996373177',
+            historia: 'A Inova Blocos Paredes Prontas Sorocaba é uma franquia dedicada a oferecer soluções de construção civil com paredes prontas, focando na sustentabilidade e inovação.'
         },
         'curitiba': {
             nome: 'Franquia Inova Blocos Paredes Prontas Curitiba',
             endereco: 'Endereço do Franqueado',
             cidade: 'Curitiba',
             estado: 'PR',
-            cep: '00000-000',
-            telefone: '(00) 00000-0000',
-            email: 'curitiba@inovablocos.com.br',
-            responsavel: 'Franqueado Curitiba',
-            whatsapp: '5519999322002',
-            historia: 'A Inova Blocos Paredes Prontas Curitiba é uma franquia que traz inovação e sustentabilidade para a construção civil paranaense. Oferecemos soluções de paredes prontas, focando na eficiência e qualidade dos nossos produtos.'
+            telefone: '(41) 99603-0020',
+            responsavel: 'Nelson Andrade Jr',
+            whatsapp: '5541996030020',
+            historia: 'A Inova Blocos Paredes Prontas Curitiba traz inovação e sustentabilidade para a construção civil paranaense.'
+        },
+        'luziania': {
+            nome: 'Franquia Inova Blocos Paredes Prontas Luziânia',
+            endereco: 'Endereço do Franqueado',
+            cidade: 'Luziânia',
+            estado: 'GO',
+            telefone: '(61) 98117-1911',
+            responsavel: 'Alexandre Miranda',
+            whatsapp: '5561981171911',
+            historia: 'A Inova Blocos Paredes Prontas Luziânia atende a região com soluções de paredes prontas sustentáveis.'
+        },
+        'ribeirao-pires': {
+            nome: 'Franquia Inova Blocos Paredes Prontas Ribeirão Pires',
+            endereco: 'Endereço do Franqueado',
+            cidade: 'Ribeirão Pires',
+            estado: 'SP',
+            telefone: '(11) 95697-1507',
+            responsavel: 'Fábio Lima',
+            whatsapp: '5511956971507',
+            historia: 'A Inova Blocos Paredes Prontas Ribeirão Pires oferece soluções eficientes para a construção local.'
+        },
+        'vale-do-paraiba': {
+            nome: 'Franquia Inova Blocos Paredes Prontas Vale do Paraíba',
+            endereco: 'Endereço do Franqueado',
+            cidade: 'Vale do Paraíba',
+            estado: 'SP',
+            telefone: '(12) 97812-8335',
+            responsavel: 'Maciel e Denis',
+            whatsapp: '5512978128335',
+            historia: 'A franquia no Vale do Paraíba foca em eficiência e sustentabilidade na construção civil.'
+        },
+        'mogi-guacu': {
+            nome: 'Franquia Inova Blocos Paredes Prontas Mogi Guaçu',
+            endereco: 'Endereço do Franqueado',
+            cidade: 'Mogi Guaçu',
+            estado: 'SP',
+            telefone: '(19) 99750-8024',
+            responsavel: 'Matheus Leal',
+            whatsapp: '5519997508024',
+            historia: 'A franquia de Mogi Guaçu atende a região com soluções em paredes prontas de alta qualidade.'
+        },
+        'ponta-grossa': {
+            nome: 'Franquia Inova Blocos Paredes Prontas Ponta Grossa',
+            endereco: 'Endereço do Franqueado',
+            cidade: 'Ponta Grossa',
+            estado: 'PR',
+            telefone: '(42) 99144-7822',
+            responsavel: 'Fabrício Borges',
+            whatsapp: '5542991447822',
+            historia: 'A franquia de Ponta Grossa introduz soluções sustentáveis e eficientes para a construção local.'
+        },
+        'humaita': {
+            nome: 'Franquia Inova Blocos Paredes Prontas Humaitá',
+            endereco: 'Endereço do Franqueado',
+            cidade: 'Humaitá',
+            estado: 'AM',
+            telefone: '(97) 98111-0107',
+            responsavel: 'Hélio e Cassandro',
+            whatsapp: '5597981110107',
+            historia: 'A franquia em Humaitá atende a região amazônica com foco em soluções sustentáveis.'
+        },
+        'porto-velho': {
+            nome: 'Franquia Inova Blocos Paredes Prontas Porto Velho',
+            endereco: 'Endereço do Franqueado',
+            cidade: 'Porto Velho',
+            estado: 'RO',
+            telefone: '(97) 98111-0107',
+            responsavel: 'Hélio e Cassandro',
+            whatsapp: '5597981110107',
+            historia: 'A franquia em Porto Velho leva nossas soluções construtivas para Rondônia.'
+        },
+        'manaus': {
+            nome: 'Franquia Inova Blocos Paredes Prontas Manaus',
+            endereco: 'Endereço do Franqueado',
+            cidade: 'Manaus',
+            estado: 'AM',
+            telefone: '(97) 98111-0107',
+            responsavel: 'Hélio e Cassandro',
+            whatsapp: '5597981110107',
+            historia: 'A franquia em Manaus atende a região com ênfase em sustentabilidade e resistência climática.'
         },
         'brasilia': {
             nome: 'Franquia Inova Blocos Paredes Prontas Brasília',
             endereco: 'Endereço do Franqueado',
             cidade: 'Brasília',
             estado: 'DF',
-            cep: '00000-000',
-            telefone: '(00) 00000-0000',
-            email: 'brasilia@inovablocos.com.br',
-            responsavel: 'Franqueado Brasília',
-            whatsapp: '5519999322002',
-            historia: 'A Inova Blocos Paredes Prontas Brasília é uma franquia que se dedica a oferecer soluções inovadoras para a construção civil na capital federal. Nossas paredes prontas são sustentáveis e eficientes, atendendo às necessidades do mercado local.'
-        },
-        'belo-horizonte': {
-            nome: 'Franquia Inova Blocos Paredes Prontas Belo Horizonte',
-            endereco: 'Endereço do Franqueado',
-            cidade: 'Belo Horizonte',
-            estado: 'MG',
-            cep: '00000-000',
-            telefone: '(00) 00000-0000',
-            email: 'belohorizonte@inovablocos.com.br',
-            responsavel: 'Franqueado Belo Horizonte',
-            whatsapp: '5519999322002',
-            historia: 'A Inova Blocos Paredes Prontas Belo Horizonte é uma franquia que traz inovação e sustentabilidade para a construção civil mineira. Oferecemos paredes prontas de alta qualidade, com foco em eficiência e respeito ao meio ambiente.'
-        },
-        'fortaleza': {
-            nome: 'Franquia Inova Blocos Paredes Prontas Fortaleza',
-            endereco: 'Endereço do Franqueado',
-            cidade: 'Fortaleza',
-            estado: 'CE',
-            cep: '00000-000',
-            telefone: '(00) 00000-0000',
-            email: 'fortaleza@inovablocos.com.br',
-            responsavel: 'Franqueado Fortaleza',
-            whatsapp: '5519999322002',
-            historia: 'A Inova Blocos Paredes Prontas Fortaleza é uma franquia que se destaca pela inovação na construção civil cearense, oferecendo paredes prontas sustentáveis e eficientes. Nossa missão é transformar o mercado local com soluções de alta qualidade.'
+            telefone: '(61) 99676-3320',
+            responsavel: 'Emiliano',
+            whatsapp: '5561996763320',
+            historia: 'A franquia em Brasília oferece soluções inovadoras para a construção na capital federal.'
         }
     };
 
-    // Função para inicializar o mapa (usando Google Maps API)
-    function initMap() {
-        // Esta função seria chamada quando a API do Google Maps estiver carregada
-        // Aqui você adicionaria os marcadores para cada franqueado
-        console.log('Mapa inicializado');
-    }
-
-    // Função para filtrar franqueados por região
-    function filtrarFranqueados(regiao) {
-        const franqueadosContainer = document.getElementById('franchisees-list');
-        if (!franqueadosContainer) return;
-
-        // Limpar conteúdo atual
-        franqueadosContainer.innerHTML = '';
-
-        if (regiao === 'todos') {
-            // Mostrar todos os franqueados
-            Object.keys(franqueados).forEach(key => {
-                const franqueado = franqueados[key];
-                adicionarCardFranqueado(franqueadosContainer, franqueado);
-            });
-        } else if (franqueados[regiao]) {
-            // Mostrar apenas o franqueado da região selecionada
-            adicionarCardFranqueado(franqueadosContainer, franqueados[regiao]);
-        } else {
-            // Região não encontrada
-            franqueadosContainer.innerHTML = '<p>Nenhum franqueado encontrado nesta região.</p>';
-        }
-    }
-
-    function adicionarCardFranqueado(container, franqueado, key) {
+    function adicionarCardFranqueado(container, franqueado) {
         const card = document.createElement('div');
         card.className = 'franchisee-card';
-        
+
         card.innerHTML = `
             <h3>${franqueado.nome}</h3>
             <div class="franchisee-info">
@@ -142,15 +134,11 @@ document.addEventListener('DOMContentLoaded', function() {
             </div>
             <div class="franchisee-contact">
                 <i class="fas fa-map-marker-alt"></i>
-                <span>${franqueado.endereco}, ${franqueado.cidade} - ${franqueado.estado}, CEP ${franqueado.cep}</span>
+                <span>${franqueado.endereco}, ${franqueado.cidade} - ${franqueado.estado}</span>
             </div>
             <div class="franchisee-contact">
                 <i class="fas fa-phone"></i>
                 <span>${franqueado.telefone}</span>
-            </div>
-            <div class="franchisee-contact">
-                <i class="fas fa-envelope"></i>
-                <span>${franqueado.email}</span>
             </div>
             ${franqueado.whatsapp ? `
                 <div class="franchisee-contact">
@@ -165,39 +153,48 @@ document.addEventListener('DOMContentLoaded', function() {
                         <i class="fas fa-book"></i> História do Franqueado
                     </a>
                 </div>
-            ` : ''}    
+            ` : ''}
         `;
-        
+
         container.appendChild(card);
     }
 
-    // Inicializar a lista de franqueados quando a página carregar
+    function filtrarFranqueados(regiao) {
+        const franqueadosContainer = document.getElementById('franchisees-list');
+        if (!franqueadosContainer) return;
+
+        franqueadosContainer.innerHTML = '';
+
+        if (regiao === 'todos') {
+            Object.keys(franqueados).forEach(key => {
+                adicionarCardFranqueado(franqueadosContainer, franqueados[key]);
+            });
+        } else if (franqueados[regiao]) {
+            adicionarCardFranqueado(franqueadosContainer, franqueados[regiao]);
+        } else {
+            franqueadosContainer.innerHTML = '<p>Nenhum franqueado encontrado nesta região.</p>';
+        }
+    }
+
     const franqueadosContainer = document.getElementById('franchisees-list');
     const regiaoSelect = document.getElementById('regiao-select');
-    
+
     if (franqueadosContainer) {
-        // Mostrar todos os franqueados inicialmente
         Object.keys(franqueados).forEach(key => {
-            const franqueado = franqueados[key];
-            adicionarCardFranqueado(franqueadosContainer, franqueado);
+            adicionarCardFranqueado(franqueadosContainer, franqueados[key]);
         });
-        
-        // Adicionar evento de mudança ao select de região
+
         if (regiaoSelect) {
-            regiaoSelect.addEventListener('change', function() {
+            regiaoSelect.addEventListener('change', function () {
                 filtrarFranqueados(this.value);
             });
         }
     }
 
-    // Formulário de interesse em franquia
     const franchiseForm = document.getElementById('franchise-form');
     if (franchiseForm) {
-        franchiseForm.addEventListener('submit', function(e) {
+        franchiseForm.addEventListener('submit', function (e) {
             e.preventDefault();
-            
-            // Aqui seria implementada a lógica de envio do formulário
-            // Por enquanto, apenas simulamos uma resposta
             alert('Obrigado pelo seu interesse! Em breve nossa equipe entrará em contato.');
             franchiseForm.reset();
         });
