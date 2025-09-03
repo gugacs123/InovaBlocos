@@ -67,7 +67,7 @@ document.addEventListener('DOMContentLoaded', function() {
             cidade: 'Mogi Guaçu',
             estado: 'SP',
             telefone: '(19) 99750-8024',
-            responsavel: 'Matheus Leal',
+            responsavel: 'Matheus Moura',
             whatsapp: '5519997508024',
             historia: 'A franquia de Mogi Guaçu atende a região com soluções em paredes prontas de alta qualidade.'
         },
