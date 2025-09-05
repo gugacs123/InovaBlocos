@@ -172,7 +172,7 @@
                     </div>
                     <div class="form-group">
                         <label for="investment">Capital Disponível para Investimento</label>
-                        <select id="investment" name="investment" required>
+                        <select id="capital" name="capital" required>
                             <option value="">Selecione uma opção</option>
                             <option value="ate-100k">Até R$ 100 mil</option>
                             <option value="100k-200k">R$ 100 mil a R$ 200 mil</option>
@@ -186,9 +186,9 @@
                     </div>
                     <div class="form-group">
                         <label for="message">Por que deseja ser um franqueado Inova Blocos Paredes Prontas?</label>
-                        <textarea id="message" name="message" rows="5" required></textarea>
+                        <textarea id="why" name="why" rows="5" required></textarea>
                     </div>
-                    <button type="submit" class="btn">Enviar Interesse</button>
+                    <button type="submit" onclick="sendMail2()" class="btn">Enviar Interesse</button>
                 </form>
             </div>
         </div>
